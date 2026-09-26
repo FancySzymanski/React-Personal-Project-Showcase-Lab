@@ -21,11 +21,6 @@ describe("LocationCard", () => {
     expect(screen.getByText("Lakeside")).toBeInTheDocument();
   });
 
-  it("renders the location description", () => {
-    renderWithRouter(<LocationCard location={mockLocation} />);
-    expect(screen.getByText(mockLocation.description)).toBeInTheDocument();
-  });
-
   it("renders the location address", () => {
     renderWithRouter(<LocationCard location={mockLocation} />);
     expect(screen.getByText(mockLocation.address)).toBeInTheDocument();

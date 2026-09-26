@@ -1,20 +1,23 @@
-import NavBar from "../components/NavBar"
-import { Outlet } from 'react-router-dom'
-import useFetchData from "../hooks/FetchData";
+import { useOutletContext } from "react-router-dom";
+import LocationCard from "./LocationCard";
 
-function LocationList() {
-    const { data: locations, error: locationsError, loading } = useFetchData("locations");
-  return (
-    <>
-      <NavBar />
-      <main>
-        <h1>Ice Cream Locations</h1>
-        {loading ? (<p>Loading locations...</p>) : (
-        <Outlet context={{locations, locationsError }} />
-        )}
-      </main>
-    </>
-  )
+const LocationList = () => {
+    const { locations, locationsError } = useOutletContext();
+
+    return (
+        <>
+            <h1>Ice Cream Locations</h1>
+            <div className="location-list">
+                {locationsError !== null ? (
+                    <p>Error Loading Locations</p>
+                ) : (
+                    locations.map((location) => (
+                        <LocationCard key={location.id} location={location} />
+                    ))
+                )}
+            </div>
+        </>
+    );
 }
 
 export default LocationList
