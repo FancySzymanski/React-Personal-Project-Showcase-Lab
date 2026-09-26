@@ -1,48 +1,48 @@
 import { render, screen } from "@testing-library/react";
 import ProductCard from "../../components/ProductCard";
 
-// Sample flavor matching the shape of entries in db.json
-const mockFlavor = {
+// Sample product matching the shape of entries in the updated (lowercase) db.json
+const mockProduct = {
   id: 1,
   name: "Vanilla",
-  Price: 4.0,
-  Image:
+  price: 4.0,
+  image:
     "https://cookienameddesire.com/wp-content/uploads/2020/06/vanilla-ice-cream-1.jpg",
-  ImageAlt: "Vanilla Ice Cream",
-  LocationsIds: [1, 2, 3, 4],
+  imageAlt: "Vanilla Ice Cream",
+  locationsIds: [1, 2, 3, 4],
 };
 
 describe("ProductCard", () => {
-  it("renders the flavor name", () => {
-    render(<ProductCard flavor={mockFlavor} />);
+  it("renders the product name", () => {
+    render(<ProductCard product={mockProduct} />);
     expect(screen.getByText("Vanilla")).toBeInTheDocument();
   });
 
-  it("renders the flavor price", () => {
-    render(<ProductCard flavor={mockFlavor} />);
-    // Adjust this matcher to however you format price in the component
-    // (e.g. "$4.00", "4.00", "$4")
-    expect(screen.getByText(/4\.00|4\.0|\$4/)).toBeInTheDocument();
+  it("renders the product price formatted as currency", () => {
+    render(<ProductCard product={mockProduct} />);
+    // ProductCard renders price via `${product.price.toFixed(2)}`, so 4.0 -> "$4.00"
+    expect(screen.getByText("$4.00")).toBeInTheDocument();
   });
 
-  it("renders the flavor image with the correct src and alt text", () => {
-    render(<ProductCard flavor={mockFlavor} />);
+  it("renders the product image with the correct src and alt text", () => {
+    render(<ProductCard product={mockProduct} />);
     const image = screen.getByAltText("Vanilla Ice Cream");
     expect(image).toBeInTheDocument();
-    expect(image).toHaveAttribute("src", mockFlavor.Image);
+    expect(image).toHaveAttribute("src", mockProduct.image);
   });
 
-  it("renders correctly for a different flavor", () => {
+  it("renders correctly for a different product", () => {
     const chocolate = {
       id: 2,
       name: "Chocolate",
-      Price: 4.5,
-      Image: "https://example.com/chocolate.jpg",
-      ImageAlt: "Chocolate Ice Cream",
-      LocationsIds: [1, 2, 3, 4],
+      price: 4.5,
+      image: "https://example.com/chocolate.jpg",
+      imageAlt: "Chocolate Ice Cream",
+      locationsIds: [1, 2, 3, 4],
     };
-    render(<ProductCard flavor={chocolate} />);
+    render(<ProductCard product={chocolate} />);
     expect(screen.getByText("Chocolate")).toBeInTheDocument();
+    expect(screen.getByText("$4.50")).toBeInTheDocument();
     expect(screen.getByAltText("Chocolate Ice Cream")).toBeInTheDocument();
   });
 });

@@ -14,7 +14,7 @@ function Landing() {
           {/* add links for directors page and about page */}
           <Link to="/locations">View Locations!</Link> |{" "}
             <Link to="/shop">View All Products</Link> |{" "}
-          <Link to="/AdminLogin">Admins, Login here</Link>
+          <Link to="/AdminLogin">Admin Login</Link>
         </nav>
       </main>
     </>

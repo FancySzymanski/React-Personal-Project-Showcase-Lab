@@ -3,66 +3,66 @@
     { 
       "id": 1, 
       "name": "Vanilla", 
-      "Price": 4.00, 
-      "Image": "https://cookienameddesire.com/wp-content/uploads/2020/06/vanilla-ice-cream-1.jpg", 
-      "ImageAlt": "Vanilla Ice Cream", 
-      "LocationsIds": [1, 2, 3, 4] 
+      "price": 4.00, 
+      "image": "https://cookienameddesire.com/wp-content/uploads/2020/06/vanilla-ice-cream-1.jpg", 
+      "imageAlt": "Vanilla Ice Cream", 
+      "locationsIds": [1, 2, 3, 4] 
     },
     { 
       "id": 2, 
       "name": "Chocolate", 
-      "Price": 4.50, 
-      "Image": "https://i0.wp.com/beyondsweetandsavory.com/wp-content/uploads/2019/07/Earl-grey-chocolate-ice-cream-final-Vy-Tran-1-of-5-843x1280.jpg?resize=674%2C1024&ssl=1", 
-      "ImageAlt": "Chocolate Ice Cream", 
-      "LocationsIds": [1, 2, 3, 4] 
+      "price": 4.50, 
+      "image": "https://i0.wp.com/beyondsweetandsavory.com/wp-content/uploads/2019/07/Earl-grey-chocolate-ice-cream-final-Vy-Tran-1-of-5-843x1280.jpg?resize=674%2C1024&ssl=1", 
+      "imageAlt": "Chocolate Ice Cream", 
+      "locationsIds": [1, 2, 3, 4] 
     },
     { 
       "id": 3, 
       "name": "Strawberry", 
-      "Price": 4.50, 
-      "Image": "https://www.rainbownourishments.com/wp-content/uploads/2025/07/vegan-strawberry-ice-cream-1.jpg", 
-      "ImageAlt": "Strawberry Ice Cream", 
-      "LocationsIds": [1, 2, 4] 
+      "price": 4.50, 
+      "image": "https://www.rainbownourishments.com/wp-content/uploads/2025/07/vegan-strawberry-ice-cream-1.jpg", 
+      "imageAlt": "Strawberry Ice Cream", 
+      "locationsIds": [1, 2, 4] 
     },
     { 
       "id": 4, 
       "name": "Coffee", 
-      "Price": 5.00, 
-      "Image": "https://www.thereciperebel.com/wp-content/uploads/2022/07/coffee-ice-cream-TRR-1200-18-of-28.jpg", 
-      "ImageAlt": "Coffee Ice Cream", 
-      "LocationsIds": [1, 3, 4] 
+      "price": 5.00, 
+      "image": "https://www.thereciperebel.com/wp-content/uploads/2022/07/coffee-ice-cream-TRR-1200-18-of-28.jpg", 
+      "imageAlt": "Coffee Ice Cream", 
+      "locationsIds": [1, 3, 4] 
     },
     { 
       "id": 5, 
       "name": "Mint Chocolate Chip", 
-      "Price": 5.00, 
-      "Image": "https://www.rainbownourishments.com/wp-content/uploads/2022/01/vegan-dairy-free-mint-chocolate-ice-cream-1.jpg", 
-      "ImageAlt": "Mint Chocolate Chip Ice Cream", 
-      "LocationsIds": [1, 2, 3] 
+      "price": 5.00, 
+      "image": "https://www.rainbownourishments.com/wp-content/uploads/2022/01/vegan-dairy-free-mint-chocolate-ice-cream-1.jpg", 
+      "imageAlt": "Mint Chocolate Chip Ice Cream", 
+      "locationsIds": [1, 2, 3] 
     },
     { 
       "id": 6, 
       "name": "Salted Caramel", 
-      "Price": 5.50, 
-      "Image": "https://iambaker.net/wp-content/uploads/2024/04/salted-caramel-icecream-2-800x1200.jpg", 
-      "ImageAlt": "Salted Caramel Ice Cream", 
-      "LocationsIds": [1, 2] 
+      "price": 5.50, 
+      "image": "https://iambaker.net/wp-content/uploads/2024/04/salted-caramel-icecream-2-800x1200.jpg", 
+      "imageAlt": "Salted Caramel Ice Cream", 
+      "locationsIds": [1, 2] 
     },
     { 
       "id": 7, 
       "name": "Lavender", 
-      "Price": 6.50, 
-      "Image": "https://diningwithskyler.com/wp-content/uploads/2020/07/F8FC67BD-4874-4BC9-A580-13896B9ECF0E-1-1.jpg", 
-      "ImageAlt": "Lavender Ice Cream", 
-      "LocationsIds": [1, 3] 
+      "price": 6.50, 
+      "image": "https://diningwithskyler.com/wp-content/uploads/2020/07/F8FC67BD-4874-4BC9-A580-13896B9ECF0E-1-1.jpg", 
+      "imageAlt": "Lavender Ice Cream", 
+      "locationsIds": [1, 3] 
     },
     { 
       "id": 8, 
       "name": "Cotton Candy", 
-      "Price": 6.50, 
-      "Image": "https://icecreamfromscratch.com/wp-content/uploads/2021/07/Cotton-Candy-Ice-Cream-1.2-683x1024.jpg", 
-      "ImageAlt": "Cotton Candy Ice Cream", 
-      "LocationsIds": [1, 4] }
+      "price": 6.50, 
+      "image": "https://icecreamfromscratch.com/wp-content/uploads/2021/07/Cotton-Candy-Ice-Cream-1.2-683x1024.jpg", 
+      "imageAlt": "Cotton Candy Ice Cream", 
+      "locationsIds": [1, 4] }
     
   ],
 
@@ -85,7 +85,7 @@
   { "id": 4, 
     "location": "Shockoe Bottom",
     "description": "Our Downtown location and walking distance to the canal walk!", 
-    "address": "1357 A Bone Ave, Richmond, VA" 
+    "address": "1357 A Bone Blvd, Richmond, VA" 
   }
   ]
 }
