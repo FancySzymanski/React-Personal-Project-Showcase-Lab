@@ -1,14 +1,12 @@
-function LocationCard() {
-  return (
-    <>
-      <div>
-        <h1>This will be a specific location store and have their products...I hope</h1>
-        <p>
-          Products will be here... Maybe?
-        </p>
-      </div>
-    </>
-  )
+import { Link } from "react-router-dom";
+
+function LocationCard({ location }) {
+    return (
+        <Link to={`/locations/${location.id}`} className="location-card">
+            <h2>{location.location}</h2>
+            <p>{location.address}</p>
+        </Link>
+    );
 }
 
 export default LocationCard
