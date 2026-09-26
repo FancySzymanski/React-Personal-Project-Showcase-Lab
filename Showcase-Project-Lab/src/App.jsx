@@ -2,12 +2,11 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import './App.css'
 import Landing from './routes/Landing.jsx'
-import ProductContainer from './routes/ProductContainer.jsx'
 import LocationContainer from './routes/LocationContainer.jsx'
 import LocationList from './components/LocationList.jsx'
-import LocationCard from './components/LocationCard.jsx'
+import ProductContainer from './routes/ProductContainer.jsx'
+import ProductList from './components/ProductList.jsx'
 import ProductForm from './components/ProductForm.jsx'
-import ProductCard from './components/ProductCard.jsx'
 import AdminForm from './routes/AdminForm.jsx'
 
 function App() {
@@ -19,10 +18,13 @@ function App() {
                 <Route path="/" element= {<Landing />} />
                 <Route path="/locations" element = {<LocationContainer />} >
                     <Route index element={<LocationList />} />
-                        <Route path="shop/new" element={<ProductForm />} />
-                        <Route path="shop/:productId" element={<ProductCard />} />
+                    <Route path=":id" element={<ProductContainer />}>
+                      <Route index element={<ProductList />} />
                     </Route>
-                <Route path="/shop" element= {<ProductContainer />} />
+                </Route>
+                <Route path="/shop" element= {<ProductContainer />}>
+                  <Route index element={<ProductList />} />
+                </Route>
                 <Route path="AdminLogin" element={<AdminForm />} />
             </Routes>
         </BrowserRouter>

@@ -1,12 +1,25 @@
-function ProductCard() {
+
+function ProductCard({ product, locations, currentLocation }) {
+const availableLocations = locations ? locations.filter((l) =>
+    product.locationsIds.some((id) => String(id) === String(l.id))
+)
+: [];
+
   return (
     <>
-      <NavBar />
-      <div>
-        <h1>This will show a single product information...eventually</h1>
-        <p>
-          Buy stuff!...eventually
-        </p>
+      <div className="product-card">
+        <img
+        src={product.image}
+        alt={product.imageAlt}
+        className="product-image"
+        />
+        <h2>{product.name}</h2>
+        <p className="product-price"> ${product.price.toFixed(2)}</p>
+        {!currentLocation && (
+            <p className="product-locations">
+                Available at: {availableLocations.map((l) => l.location).join(", ")}
+            </p>
+        )}
       </div>
     </>
   )
