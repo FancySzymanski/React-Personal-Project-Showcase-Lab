@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import ProductCard from "../../components/ProductCard";
 
-// Sample product matching the shape of entries in the updated (lowercase) db.json
 const mockProduct = {
   id: 1,
   name: "Vanilla",
@@ -20,7 +19,6 @@ describe("ProductCard", () => {
 
   it("renders the product price formatted as currency", () => {
     render(<ProductCard product={mockProduct} />);
-    // ProductCard renders price via `${product.price.toFixed(2)}`, so 4.0 -> "$4.00"
     expect(screen.getByText("$4.00")).toBeInTheDocument();
   });
 
