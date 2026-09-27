@@ -1,15 +1,14 @@
-function SearchBar() {
+function SearchBar({ searchTerm, onSearchChange }) {
   return (
-    <>
-      <NavBar />
-      <div>
-        <h1>This ideally will list products and the stores that have them...If I get around to it...</h1>
-        <p>
-          Useful!...When it works...
-        </p>
-      </div>
-    </>
-  )
+    <div className="search-bar">
+      <input
+        type="text"
+        placeholder="Search"
+        value={searchTerm}
+        onChange={(e) => onSearchChange(e.target.value)}
+      />
+    </div>
+  );
 }
 
 export default SearchBar

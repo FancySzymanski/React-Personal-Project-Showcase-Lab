@@ -1,2 +1,4 @@
 import './test_suites/Locationcard.test'
 import './test_suites/ProductCard.test'
+import './test_suites/SearchBar.test'
+import './test_suites/AdminAuth.test'

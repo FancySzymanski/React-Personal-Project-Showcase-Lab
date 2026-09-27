@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import LocationCard from "../../components/LocationCard";
 
-// Sample location matching the shape of entries in db.json
 const mockLocation = {
   id: 1,
   location: "Lakeside",
@@ -11,8 +10,6 @@ const mockLocation = {
   address: "1234 Knick Knack Rd, Richmond, VA",
 };
 
-// Helper since LocationCard likely renders a <Link>, which requires
-// a Router context to avoid an "outside of Router" error
 const renderWithRouter = (ui) => render(<MemoryRouter>{ui}</MemoryRouter>);
 
 describe("LocationCard", () => {
