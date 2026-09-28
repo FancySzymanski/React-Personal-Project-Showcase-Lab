@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
-import { AdminProvider, useAdmin } from "../../context/AdminContext";
+import { AdminProvider, useAdmin } from "../../components/AdminContext";
 import AdminForm from "../../routes/AdminForm";
 
 function AdminProductsStub() {
