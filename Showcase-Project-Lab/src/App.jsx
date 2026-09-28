@@ -6,13 +6,17 @@ import LocationContainer from './routes/LocationContainer.jsx'
 import LocationList from './components/LocationList.jsx'
 import ProductContainer from './routes/ProductContainer.jsx'
 import ProductList from './components/ProductList.jsx'
-import ProductForm from './components/ProductForm.jsx'
+import { AdminProvider } from './components/AdminContext.jsx'
 import AdminForm from './routes/AdminForm.jsx'
+import AdminProductContainer from './routes/AdminProductContainer.jsx'
+import AdminProductList from './components/AdminProductList.jsx'
+import AdminProductForm from './components/AdminProductForm.jsx'
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
+    <AdminProvider>
     <BrowserRouter>
             <Routes>
                 <Route path="/" element= {<Landing />} />
@@ -25,9 +29,15 @@ function App() {
                 <Route path="/shop" element= {<ProductContainer />}>
                   <Route index element={<ProductList />} />
                 </Route>
-                <Route path="AdminLogin" element={<AdminForm />} />
+                <Route path="/admin/login" element={<AdminForm />} />
+                <Route path="/admin/products" element={<AdminProductContainer />}>
+                  <Route index element={<AdminProductList />} />
+                  <Route path="new" element={<AdminProductForm />} />
+                  <Route path=":id/edit" element={<AdminProductForm />} />
+                </Route>
             </Routes>
         </BrowserRouter>
+    </AdminProvider>
   )
 }
 
