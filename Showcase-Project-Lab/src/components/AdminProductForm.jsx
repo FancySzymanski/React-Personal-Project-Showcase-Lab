@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useId } from "react";
 import { useParams, useNavigate, useOutletContext } from "react-router-dom";
 import useFetchData from "../hooks/FetchData";
 import useMutateData from "../hooks/MutateData";
 
 function AdminProductForm() {
+    const formId = useId();
     const { id } = useParams();
     const navigate = useNavigate();
     const { products, addProduct, editProduct } = useOutletContext();
@@ -66,18 +67,18 @@ function AdminProductForm() {
         <form onSubmit={handleSubmit} className="admin-product-form">
             <h1>{existingProduct ? "Edit Flavor" : "Add New Flavor"}</h1>
 
-            <label htmlFor="name">Name</label>
+            <label htmlFor={`${formId}-name`}>Name</label>
             <input
-                id="name"
+                id={`${formId}-name`}
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
             />
 
-            <label htmlFor="price">Price</label>
+            <label htmlFor={`${formId}-price`}>Price</label>
             <input
-                id="price"
+                id={`${formId}-price`}
                 type="number"
                 step="0.01"
                 value={price}
@@ -85,18 +86,18 @@ function AdminProductForm() {
                 required
             />
 
-            <label htmlFor="image">Image URL</label>
+            <label htmlFor={`${formId}-image`}>Image URL</label>
             <input
-                id="image"
+                id={`${formId}-image`}
                 type="text"
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
                 required
             />
 
-            <label htmlFor="imageAlt">Image Alt Text</label>
+            <label htmlFor={`${formId}-imageAlt`}>Image Alt Text</label>
             <input
-                id="imageAlt"
+                id={`${formId}-imageAlt`}
                 type="text"
                 value={imageAlt}
                 onChange={(e) => setImageAlt(e.target.value)}
@@ -109,10 +110,10 @@ function AdminProductForm() {
                     <p>Loading locations...</p>
                 ) : (
                     locations.map((loc) => (
-                        <label key={loc.id} htmlFor={`location-${loc.id}`}>
+                        <label key={loc.id} htmlFor={`${formId}-location-${loc.id}`}>
                             <input
                                 type="checkbox"
-                                id={`location-${loc.id}`}
+                                id={`${formId}-location-${loc.id}`}
                                 checked={locationsIds.includes(String(loc.id))}
                                 onChange={() => toggleLocation(loc.id)}
                             />
